@@ -4,26 +4,122 @@
   android:orientation="vertical"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
-  tools:context=".MainActivity"
+  android:layout_marginTop="64dp"
+  tools:context=".ui.MainActivity"
   tools:showIn="@layout/activity_main"
   >
 
-  <!-- city Name
-  zipcode
-  lat/lon
--->
+  <TextView
+    android:id="@+id/textView"
+    android:layout_width="wrap_content"
+    android:textSize="16sp"
+    android:layout_height="wrap_content"
+    tools:text="Results here"
+    />
 
   <EditText
+    android:id="@+id/city_input"
     android:layout_width="match_parent"
-    android:layout_height="16dp"
-    android:layout_marginTop="64dp"
-    android:hint="zipcode"
+    android:layout_height="wrap_content"
+    android:inputType="text"
+    android:hint="@string/city_name"
     />
 
-  <TextView
-    android:layout_width="wrap_content"
+  <EditText
+    android:id="@+id/zip_input"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:text="Hello World!"
+    android:inputType="number"
+    android:hint="@string/zip_code"
     />
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    >
+
+    <EditText
+      android:id="@+id/lat_input"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      android:inputType="number"
+      android:hint="@string/latitude"
+      />
+
+    <EditText
+      android:id="@+id/lon_input"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      android:inputType="number"
+      android:hint="@string/longitude"
+      />
+
+  </LinearLayout>
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <Button
+      android:id="@+id/city_button"
+      style="?android:attr/buttonBarButtonStyle"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      android:layout_marginTop="20dp"
+      android:text="@string/get_city"
+      />
+
+    <Button
+      android:id="@+id/zip_button"
+      style="?android:attr/buttonBarButtonStyle"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      android:layout_marginTop="20dp"
+      android:text="@string/get_zip"
+      />
+
+    <Button
+      android:id="@+id/lat_lon_button"
+      style="?android:attr/buttonBarButtonStyle"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      android:layout_marginTop="20dp"
+      android:text="@string/get_lat_lon"
+      />
+
+
+  </LinearLayout>
+
+  <RadioGroup
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    >
+
+    <RadioButton
+      android:id="@+id/radio_fahrenheit"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@string/fahrenheit"
+      android:checked="true"
+      android:onClick="onRadioButtonClicked"
+      android:layout_marginRight="16dp"
+      />
+
+    <RadioButton
+      android:id="@+id/radio_celsius"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@string/celsius"
+      android:onClick="onRadioButtonClicked"
+      />
+
+  </RadioGroup>
 
 </LinearLayout>
