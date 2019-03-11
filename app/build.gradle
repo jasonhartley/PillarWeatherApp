@@ -16,15 +16,18 @@ android {
       proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
     }
   }
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+  }
 }
 
 dependencies {
   implementation fileTree(dir: 'libs', include: ['*.jar'])
   implementation 'com.android.support:appcompat-v7:27.1.1'
-  implementation 'com.android.support.constraint:constraint-layout:1.1.3'
   implementation 'com.android.support:design:27.1.1'
   implementation 'com.squareup.retrofit2:retrofit:2.5.0'
-  implementation 'com.squareup.retrofit2:converter-gson:2.4.0'//not sure which is better
+  implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
   implementation 'com.google.android.gms:play-services-location:16.0.0'
 
   testImplementation 'junit:junit:4.12'
